@@ -13,6 +13,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.format.annotation.DateTimeFormat;
+import com.moin.services.notification.util.HashMapConverter;
 import lombok.Data;
 import lombok.ToString;
 
@@ -65,7 +66,7 @@ public class NotificationEvent {
   @Column(name = "notification_status")
   private String notificationStatus;
 
-//  @Convert(converter = HashMapConverter.class)
+  @Convert(converter = HashMapConverter.class)
   @Column(name = "used_parameters_json")
   private Map<String, Object> usedParametersJson;
 
